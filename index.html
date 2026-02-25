@@ -63,11 +63,14 @@ body {
 /* ─── NAV ─── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(8,12,20,.72);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,.05);
   transition: all .4s cubic-bezier(.16,1,.3,1);
 }
 nav.scrolled {
-  background: rgba(8,12,20,.88);
-  backdrop-filter: blur(24px);
+  background: rgba(8,12,20,.94);
+  backdrop-filter: blur(28px);
   border-bottom: 1px solid var(--border-dark);
 }
 .nav-inner {
@@ -942,7 +945,7 @@ footer {
       <p class="hero-sub">Nous accompagnons les dirigeants de PME et ETI à intégrer l'IA dans leurs opérations — sans jargon, sans usine à gaz, avec des résultats mesurables dès le premier mois.</p>
       <div class="hero-actions">
         <a href="https://calendly.com/dbenouaisch-urfw/30min" target="_blank" class="btn-primary">
-          Réserver mon audit gratuit de 30 min
+          Je veux mon diagnostic gratuit
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#offres" class="btn-ghost">
@@ -1219,8 +1222,8 @@ footer {
           <div class="testi-author">
             <div class="testi-avatar">JM</div>
             <div>
-              <div class="testi-name">[Prénom Nom]</div>
-              <div class="testi-role">Directeur Général · [Entreprise] — à remplacer</div>
+              <div class="testi-name">Client anonyme</div>
+              <div class="testi-role">Dirigeant · PME Transport &amp; Logistique</div>
             </div>
           </div>
         </div>
@@ -1360,7 +1363,7 @@ footer {
       <p class="s-sub" style="text-align:center;margin:0 auto 40px;color:rgba(255,255,255,.6)">Réservez un échange de 30 minutes — gratuit, concret, sans engagement.</p>
       <div class="cta-actions">
         <a href="https://calendly.com/dbenouaisch-urfw/30min" target="_blank" class="btn-primary" style="font-size:1rem;padding:16px 34px">
-          Réserver mon créneau
+          Discutons 30 min — c'est gratuit
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="/cdn-cgi/l/email-protection#214543444f4e54404852424961494e554c40484d0f424e4c" class="btn-ghost">
@@ -1418,7 +1421,7 @@ footer {
       <h4>Contact</h4>
       <ul>
         <li><a href="/cdn-cgi/l/email-protection#4f2b2d2a21203a2e263c2c270f27203b222e2623612c2022"><span class="__cf_email__" data-cfemail="a7c3c5c2c9c8d2c6ced4c4cfe7cfc8d3cac6cecb89c4c8ca">[email&#160;protected]</span></a></li>
-        <li><a href="tel:+33XXXXXXXXX">[Votre téléphone]</a></li>
+        <li><a href="tel:+33677047354">06 77 04 73 54</a></li>
         <li><a href="#">Paris, France</a></li>
         <li><a href="#cta-final">Prendre RDV →</a></li>
       </ul>
@@ -1513,4 +1516,15 @@ document.getElementById('faqList').querySelectorAll('.faq-item').forEach(item =>
     const isOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
-  
+
+<!-- ─── WIDGET FLOTTANT CONTACT ─── -->
+<div id="contact-widget" style="position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;">
+  <a href="https://wa.me/33677047354?text=Bonjour%20Dan%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20Pragma%20IA" target="_blank" rel="noopener" title="Écrire sur WhatsApp" style="width:52px;height:52px;border-radius:50%;background:#25D366;box-shadow:0 4px 20px rgba(37,211,102,.45);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.859L.054 23.454a.75.75 0 00.918.919l5.701-1.496A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.7-.504-5.25-1.385l-.376-.217-3.885 1.02 1.004-3.793-.233-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  </a>
+  <a href="tel:+33677047354" title="Appeler Dan" style="width:52px;height:52px;border-radius:50%;background:#00C27A;box-shadow:0 4px 20px rgba(0,194,122,.4);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.46a16 16 0 0 0 7.62 7.62l1.21-1.21a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+  </a>
+</div>
+</body>
+</html>
