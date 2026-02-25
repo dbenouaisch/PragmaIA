@@ -129,7 +129,7 @@ nav.scrolled {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=1800&q=85&auto=format&fit=crop');
+  background-image: url('./images/hero-bg.jpg'), linear-gradient(135deg, #0E1520 0%, #1C2838 50%, #0E1520 100%);
   background-size: cover;
   background-position: center 30%;
   transform: scale(1.06);
@@ -775,7 +775,7 @@ section { padding: 100px 24px; }
 }
 .cta-bg {
   position: absolute; inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80&auto=format&fit=crop');
+  background-image: url('./images/bureau-cta.jpg'), linear-gradient(135deg, #0E1520 0%, #141D2B 100%);
   background-size: cover;
   background-position: center;
   filter: brightness(.25) saturate(.7);
@@ -1013,7 +1013,7 @@ footer {
   <div class="container">
     <div class="inner">
       <div class="img-side reveal">
-        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&q=85&auto=format&fit=crop" alt="Équipe en réunion stratégique" loading="lazy">
+        <img src="./images/equipe-reunion.jpg" alt="Équipe en réunion stratégique" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1C2838,#0E1520)'">
         <div class="img-badge">
           <strong>90%</strong>
           <span>des PME sous-utilisent<br>le potentiel de l'IA</span>
@@ -1067,7 +1067,7 @@ footer {
     </div>
     <div class="bento">
       <div class="bento-card bento-1 reveal">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&auto=format&fit=crop" alt="Dashboard analytique" loading="lazy" class="bento-img">
+        <img src="./images/dashboard-analytics.jpg" alt="Dashboard analytique" loading="lazy" class="bento-img" onerror="this.style.background='linear-gradient(135deg,#141D2B,#1a2d45)';this.src=''">
         <div class="bento-tag">Pragmatique</div>
         <div class="bento-title">Résultats avant la technologie</div>
         <div class="bento-text">On identifie les cas d'usage à ROI rapide dans votre contexte. Pas de slides — des actions concrètes dès la première semaine.</div>
@@ -1088,7 +1088,7 @@ footer {
         <div class="bento-text">Résultat client réel — grossiste B2B, 80 salariés.</div>
       </div>
       <div class="bento-card bento-4 reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80&auto=format&fit=crop" alt="Collaboration professionnelle" loading="lazy" class="bento-img" style="height:160px">
+        <img src="./images/collaboration.jpg" alt="Collaboration professionnelle" loading="lazy" class="bento-img" style="height:160px" onerror="this.style.background='linear-gradient(135deg,#141D2B,#1a2d45)';this.src=''">
         <div class="bento-tag">Partenarial</div>
         <div class="bento-title">Votre Directeur IA à temps partagé</div>
         <div class="bento-text">On ne disparaît pas après la mission. On reste dans la durée, comme un membre de votre équipe de direction. Votre succès est notre référence.</div>
@@ -1109,7 +1109,7 @@ footer {
       <!-- Découverte -->
       <div class="offer reveal reveal-delay-1">
         <div class="offer-img">
-          <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&q=80&auto=format&fit=crop" alt="Audit et analyse" loading="lazy">
+          <img src="./images/audit-analyse.jpg" alt="Audit et analyse" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1a2744,#0E1520)'">
           <div class="offer-img-overlay"></div>
           <span class="offer-tier tier-1">Découverte</span>
         </div>
@@ -1132,7 +1132,7 @@ footer {
       <div class="offer featured reveal reveal-delay-2">
         <div class="featured-flag">⭐ Le plus demandé</div>
         <div class="offer-img">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&auto=format&fit=crop" alt="Stratégie et roadmap" loading="lazy">
+          <img src="./images/strategie-roadmap.jpg" alt="Stratégie et roadmap" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0E1520,#1a2744)'">
           <div class="offer-img-overlay"></div>
           <span class="offer-tier tier-2">Structuration</span>
         </div>
@@ -1155,7 +1155,7 @@ footer {
       <!-- Accélération -->
       <div class="offer reveal reveal-delay-3">
         <div class="offer-img">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80&auto=format&fit=crop" alt="Formation et accompagnement équipe" loading="lazy">
+          <img src="./images/formation-equipe.jpg" alt="Formation et accompagnement équipe" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a2a1a,#0E1520)'">
           <div class="offer-img-overlay"></div>
           <span class="offer-tier tier-3">Accélération</span>
         </div>
@@ -1443,7 +1443,8 @@ window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', wind
 /* ── Hero parallax + bg loaded ── */
 const heroBg = document.getElementById('heroBg');
 const img = new Image();
-img.src = 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=1800&q=85&auto=format&fit=crop';
+img.src = './images/hero-bg.jpg';
+img.onerror = () => heroBg.classList.add('loaded');
 img.onload = () => heroBg.classList.add('loaded');
 window.addEventListener('scroll', () => {
   heroBg.style.transform = `scale(1) translateY(${window.scrollY * .25}px)`;
